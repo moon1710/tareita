@@ -5,6 +5,7 @@ COLORES
 #FFC145
 #FFFFFB
 #FF6B6C
+#763FCB
 */
 
 /*fonts*/
@@ -22,88 +23,294 @@ COLORES
 
 /*Handle*/
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(0deg, rgb(91, 95, 151) 0%, rgb(91, 95, 151) 100%);
+  background: linear-gradient(0deg, rgb(164, 109, 216) 0%, rgb(121, 84, 180) 100%);
   height: 40px;
   border-radius: 10px;
   transform: 0.4s;
+  transition: all 0.2s ease 0s;
 }
 
 /*Handle on hover*/
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8B8D1;
+  background: #763FCB;
  transform: 0.4s;
+ transition: all 0.2s ease 0s;
 }
 
 /*------------------------CUERPO------------------------*/
+
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
 
 body{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FFFFFB;
+  background-color: #B8B8D1;
 }
 
-.nav-links{
+/*NavBar*/
+.header{
+  font-family: "fredoka";
+  font-size: 20px;
+  background-color: #763FCB;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background: #fff;
-  padding: 20px 15px;
-  border-radius: 12px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  height: 85px;
+  width: 100%;
+  padding: 5px 10%;
 }
-.nav-links li{
+
+.header .logo{
+  cursor: pointer;
+}
+
+.header .logo img{
+  height: 40px;
+  width: 40px;
+  width: auto;
+  transition: all 0.2s ease 0s;
+}
+
+.header .logo img:hover{
+  transform: scale(1.2);
+  transition: all 0.2s ease 0s;
+}
+
+.header .nav-links{
   list-style: none;
-  margin: 0 12px;
 }
-.nav-links li a{
-  position: relative;
-  color: #333;
+
+.header .nav-links li{
+  display: inline-block;
+  padding: 0 20px;    
+}
+
+.header .nav-links li:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease 0s;
+}
+
+.header .nav-links a{
+  font-family: "fredoka";
+  font-size: 700;
+  color: #eceff1;
+  text-decoration: none;    
+}
+
+.header .nav-links li a:hover{
+  color: #FFC145;
+}
+
+.header .button button{
+  font-family: "fredoka";
   font-size: 20px;
   font-weight: 500;
-  padding: 6px 0;
-  text-decoration: none;
+  color: #1b3039;
+  padding: 9px 25px;
+  background: #eceff1;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
-.nav-links li a:before{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  background: #34efdf;
-  border-radius: 12px;
-  transition: all 0.4s ease;
+
+.header .button button:hover{
+  background-color: #FFC145;
+  color: #fff;
+  transform: scale(1.1);
+} 
+
+/*-------------------Quien Soy-------------------*/
+.containerQuienSoy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #FFFFFB;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-.nav-links li a:hover:before{
-  width: 100%;
+
+.containerQuienSoy .profileImg img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: all 0.3s ease 0s;
 }
-.nav-links li.center a:before{
-  left: 50%;
-  transform: translateX(-50%);
+
+.containerQuienSoy .profileImg img:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease 0s;
 }
-.nav-links li.upward a:before{
-  width: 100%;
-  bottom: -5px;
-  opacity: 0;
+
+.containerQuienSoy .profileInfo h2 {
+  font-weight: 700;
+  font-size: 2em;
+  color: #FF6B6C;
+  font-family: 'Poppins', 'Courier New', Courier, monospace;
+  margin-bottom: 10px;
 }
-.nav-links li.upward a:hover:before{
-  bottom: 0px;
-  opacity: 1;
+
+.containerQuienSoy .profileInfo h3 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #763FCB;
+  font-family: 'fredoka', 'Courier New', Courier, monospace;
+  margin-bottom: 10px;
 }
-.nav-links li.forward a:before{
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease;
+
+.containerQuienSoy .profileInfo p {
+  font-family: 'Poppins', sans-serif;
+  color: #6a778e;
+  font-size: medium;
+  line-height: 1.6;
 }
-.nav-links li.forward a:hover:before{
-  transform: scaleX(1);
-  transform-origin: left;
+
+.btnSaber {
+  font-family: "fredoka";
+  font-weight: 400;
+  font-size: large;
+  margin: 20px;
+  width: 137px;
+  height: 50px;
+  border: none;
+  background: #763fcb;
+  color: #fff7f7;
+  border-radius: 40px;
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0), 0px 0px 0px 9px rgba(0, 0, 0, 0), inset 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  transition: all ease 0.3s;
+}
+
+.btnSaber:hover{
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  width: 150px;
+  transition: all ease 0.3s;
+  background-color: #FFC145;
+  color: #763FCB;
+}
+
+
+/*------------------- Tablaa -------------------*/
+.containerTable {
+    width: 80%;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.tableHeader h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #763FCB;
+}
+
+.tableHeader h3 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #763FCB;
+}
+
+
+.tableGrid table {
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: "Montserrat";
+    width: 100%;
+    border: none;
+    border-radius: 20px; 
+    overflow: hidden; 
+}
+
+
+.tableGrid th, .tableGrid td {
+    border: 2px solid #B8B8D1;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease; 
+}
+
+/* Headers */
+.tableGrid th {
+    background-color: #763FCB;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Cells */
+.tableGrid td {
+    background-color: #FFFFFB;
+    color: #5B5F97;
+}
+
+/* Hover Effect */
+.tableGrid tr:hover td {
+    background-color: #ecebff; /* Cambia el color de fondo al pasar el mouse */
+    cursor: pointer;
+}
+
+/* Active Row */
+.tableGrid tr.active-row {
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+}
+
+.tableGrid iframe {
+    border-radius: 8px;
+}
+
+/* Container Galeriaaaaa */
+.containerCuadritos {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Galería de 2 columnas */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 15px;
+    width: 80%;
+}
+
+/* Cada ítem de la galería */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; /* Puedes ajustar la altura según lo que desees */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom al pasar el mouse */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
 }

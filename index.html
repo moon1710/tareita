@@ -1,19 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-    <title>MonserratLoCa</title>
-    <!--icon-->
-    <link rel="icon" href="./assets/icon_path.png" type="image/icon type">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonserratLoCa</title>
+  <!--icon-->
+  <link rel="icon" href="./assets/icon_path.png" type="image/png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./script.js"></script>
 </head>
-
-
 <body>
-    <ul class="nav-links"></ul>
-    <li><a href="#">Dashboard</a></li>
-    <li class="center"><a href="#">Portfolio</a></li>
-    <li class="upward"><a href="#">Services</a></li>
-    <li class="forward"><a href="#">Feedback</a></li>
-  </ul>
+
+  <header class="header">
+    <div class="logo">
+      <img src="./assets/icon_path.png" alt="Logo de la marca">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#quienSoy">moon</a></li>
+        <li><a href="#lanita">Cancioness</a></li>
+        <li><a href="#pinturitas">Pinturitas</a></li>
+      </ul>            
+    </nav>
+    <a class="button" href="#footer"><button>Saber Más</button></a>
+  </header>
+
+  <!--Quien Soy-->
+<div class="containerQuienSoy" id="quienSoy">
+  <div class="profileImg">
+    <img src="./assets/Monki.png" alt="Imagen de Monserrat">
+  </div>
+  <div class="profileInfo">
+    <h2>BIENVENIDO!!!</h2>
+    <p>Me llamo Monserrat Caballero, actualmente tengo 20 años. Estudio Ingeniería en Sistemas Computacionales y aquí podrás saber un poco más de mí</p>
+    <button class='btnSaber'>Saber Más</button>
+  </div>
+</div>
+<br>
+
+<!--Table-->
+<div class="containerTable" id="lanita">
+    <div class="tableHeader">
+        <h2>Adoro escuchar música todo el tiempo, </h2>
+        <h3>estas son algunas de mis canciones favoritas:</h3>
+    </div>
+    <div class="tableGrid">
+        <table>
+            <tr>
+                <th>Artista</th>
+                <th>Canción</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td>Lana del Rey</td>
+                <td>Utraviolence</td>
+                <td>
+                    <iframe width="200" height="150" src="https://www.youtube.com/embed/ZFWC4SiZBao?si=3Kcwbp3Yw4zvVd_2" frameborder="0" allowfullscreen></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td>Childish Gambino</td>
+                <td>Redbone</td>
+                <td>
+                    <iframe width="200" height="150" src="https://www.youtube.com/embed/Kp7eSUU9oy8?si=uz0Rc7e9a7WLUkB2" frameborder="0" allowfullscreen></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td>Kendrick Lamar</td>
+                <td>Pride.</td>
+                <td>
+                    <iframe width="200" height="150" src="https://www.youtube.com/embed/J87pJrxvJ5E?si=QLu_9GcbZBLQCzM1" frameborder="0" allowfullscreen></iframe>                
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Galeríaaaa -->
+<div class="containerCuadritos" id="pinturitas">
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="./assets/pinturitas/pinturita1.jpeg" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+            <img src="./assets/pinturitas/pinturita2.jpeg" alt="Imagen 2">
+        </div>
+        <div class="gallery-item">
+            <img src="./assets/pinturitas/pinturita3.jpeg" alt="Imagen 3">
+        </div>
+        <div class="gallery-item">
+            <img src="./assets/pinturitas/pinturita4.jpeg" alt="Imagen 4">
+        </div>
+        <div class="gallery-item">
+            <img src="./assets/pinturitas/pinturita5.jpeg" alt="Imagen 5">
+        </div>
+        <div class="gallery-item">
+            <img src="./assets/pinturitas/pinturita6.jpeg" alt="Imagen 6">
+        </div>
+    </div>
+</div>
+
+
+
 </body>
 </html>
