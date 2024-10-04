@@ -7,7 +7,6 @@
   <!--icon-->
   <link rel="icon" href="./assets/icon_path.png" type="image/png">
   <link rel="stylesheet" href="./css/styles.css">
-  <script src="./script.js"></script>
 </head>
 <body>
 
@@ -22,7 +21,9 @@
         <li><a href="#pinturitas">Pinturitas</a></li>
       </ul>            
     </nav>
-    <a class="button" href="#footer"><button>Saber Más</button></a>
+    <a class="button" href="#contactoo">
+      <button>Saber Más</button>
+    </a>
   </header>
 
   <!--Quien Soy-->
@@ -33,7 +34,7 @@
   <div class="profileInfo">
     <h2>BIENVENIDO!!!</h2>
     <p>Me llamo Monserrat Caballero, actualmente tengo 20 años. Estudio Ingeniería en Sistemas Computacionales y aquí podrás saber un poco más de mí</p>
-    <button class='btnSaber'>Saber Más</button>
+    <button class='btnSaber' onclick="location.href='#contactoo'">Saber Más</button>
   </div>
 </div>
 <br>
@@ -77,7 +78,20 @@
 </div>
 
 <!-- Galeríaaaa -->
-<div class="containerCuadritos" id="pinturitas">
+<div class="containerGallery">
+  <div class="headerGallery">
+    <video autoplay loop muted playsinline>
+      <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Otro de mis gustos</h1>
+      <p>Amo las artes, y desde pequeña me ha llamado mucho el arte de pintar, a lo largo de estos últimos años he realizado algunas piezas, estas son unas de ellas.</p>
+    </div>
+  </div>
+
+  <div class="containerCuadritos" id="pinturitas">
     <div class="gallery">
         <div class="gallery-item">
             <img src="./assets/pinturitas/pinturita1.jpeg" alt="Imagen 1">
@@ -98,9 +112,77 @@
             <img src="./assets/pinturitas/pinturita6.jpeg" alt="Imagen 6">
         </div>
     </div>
+  </div>
 </div>
 
+<!-- Sección de contacto -->
+<section class="contactSection" id="contactoo">
+  <div class="contactContainer">
+    <!-- Texto de contacto -->
+    <div class="contactInfo">
+      <h2>¡Contáctame!</h2>
+      <p>Si tienes alguna duda, sugerencia o simplemente quieres ponerte en contacto conmigo, completa el formulario de la derecha y te responderé lo antes posible. ¡Gracias!</p>
+      <img src="./assets/manitos.png" alt="manitos">
+    </div>
+    
+    <!-- Formulario de contacto -->
+    <div class="formContainer">
+      <form class="fancyForm" id="contactForm">
+        <h3>Envíame un mensaje</h3>
+        
+        <div class="inputGroup">
+          <input type="text" name="nombre" id="nombre" required>
+          <label>Nombre Completo</label>
+          <span class="bar"></span>
+        </div>
+        
+        <div class="inputGroup">
+          <input type="email" name="email" id="email" required>
+          <label>Email</label>
+          <span class="bar"></span>
+        </div>
+        
+        <div class="inputGroup">
+          <textarea rows="4" name="mensaje" id="mensaje" required></textarea>
+          <label>Mensaje</label>
+          <span class="bar"></span>
+        </div>
+        
+        <button type="submit" class="submitButton">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
 
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>¡Gracias por tu mensaje!</h2>
+    <p><strong>Nombre:</strong> <span id="modalNombre"></span></p>
+    <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+    <p><strong>Mensaje:</strong> <span id="modalMensaje"></span></p>
+  </div>
+</div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var closeModal = document.getElementsByClassName("close")[0];
+
+  closeModal.onclick = function() {
+    var modal = document.getElementById("modal");
+    modal.style.display = "none";
+  };
+
+  window.onclick = function(event) {
+    var modal = document.getElementById("modal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+});
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>

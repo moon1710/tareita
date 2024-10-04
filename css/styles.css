@@ -202,6 +202,7 @@ body{
 
 
 /*------------------- Tablaa -------------------*/
+
 .containerTable {
     width: 80%;
     padding-bottom: 20px;
@@ -277,40 +278,347 @@ body{
 }
 
 /* Container Galeriaaaaa */
+
+.containerGallery{
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  align-content: center;
+}
+
+
+/* Video as background */
+.headerGallery video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes sure the video covers the container */
+  z-index: -2; /* Puts the video behind everything */
+}
+
+/* Overlay on the video */
+.headerGallery .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: -1; /* Ensures the overlay is above the video but below the content */
+}
+
+/* Content on top of video and overlay */
+.headerGallery .content {
+  position: relative;
+  align-items: center;
+  align-content: center;
+  color: white;
+  text-align: center;
+  z-index: 1; 
+  padding: 50px;
+  font-family: "Montserrat";
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 .containerCuadritos {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  justify-content: center; 
+  padding: 20px;
 }
 
-/* Galería de 2 columnas */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
-    gap: 15px;
-    width: 80%;
-}
-
-/* Cada ítem de la galería */
-.gallery-item {
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px; 
+  width: 100%;
+  margin: 0 auto; 
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 250px; /* Puedes ajustar la altura según lo que desees */
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-    transition: transform 0.3s ease;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Galería */
+.containerCuadritos {
+  display: flex;
+  justify-content: center; 
+  padding: 20px;
 }
 
-/* Efecto de zoom al pasar el mouse */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px; 
+  width: 100%; 
+  margin: 0 auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.2s;
+}
+
+
 .gallery-item:hover {
     transform: scale(1.05);
 }
 
 .gallery-item:hover img {
     transform: scale(1.1);
+    transition: all ease 0.2s;
+}
+
+/*form*/
+/* Sección de contacto */
+.contactSection {
+  background-color: #F1F3F4;
+  padding: 50px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Texto de contacto */
+.contactInfo {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.contactInfo h2 {
+  font-size: 28px;
+  color: #763FCB;
+  margin-bottom: 20px;
+}
+
+.contactInfo p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.contactInfo img {
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contactInfo img:hover {
+  animation: wave 1.5s ease-in-out infinite; /* Animación más suave y lenta */
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-10px, 5px) rotate(-3deg);
+  }
+  50% {
+    transform: translate(10px, -5px) rotate(3deg);
+  }
+  75% {
+    transform: translate(-10px, 5px) rotate(-3deg);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Estilos generales del formulario */
+.formContainer {
+  flex: 1;
+}
+
+.fancyForm {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.fancyForm h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #763FCB;
+}
+
+/* Estilos para los grupos de input */
+.inputGroup {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.inputGroup input, .inputGroup textarea {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus, .inputGroup textarea:focus {
+  border-bottom-color: #763FCB;
+}
+
+.inputGroup label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+  color: #aaaaaa;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input:focus ~ label, 
+.inputGroup input:not(:placeholder-shown) ~ label,
+.inputGroup textarea:focus ~ label, 
+.inputGroup textarea:not(:placeholder-shown) ~ label {
+  top: -15px;
+  left: 5px;
+  font-size: 12px;
+  color: #763FCB;
+}
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #763FCB;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.inputGroup input:focus ~ .bar, 
+.inputGroup textarea:focus ~ .bar {
+  transform: scaleX(1);
+}
+
+/* Botón de submit */
+.submitButton {
+  background-color: #763FCB;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(118, 63, 203, 0.4);
+}
+
+.submitButton:hover {
+  font-weight: 400;
+  background-color: #FFC145;
+  color: #472f9c;
+  box-shadow: 0 8px 20px rgba(118, 63, 203, 0.6);
+  transition: all ease 0.2s;
+}
+
+.submitButton:active {
+  background-color: #472f9c;
+  transform: translateY(2px);
+  transition: all ease 0.2s;
+}
+
+/* Ajuste de diseño responsivo */
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+  }
+  
+  .contactInfo {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  font-family: "Poppins";
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(90, 40, 166, 0.5); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all ease 0.2;
+}
+
+.close:hover,
+.close:focus {
+  color: #FF6B6C;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all ease 0.2;
+}
+
+.modal h2 {
+  margin-top: 0;
+  color: #763fcb;
+}
+
+/* Estilos del botón de envío */
+.modal .submitButton {
+  background-color: #763FCB;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.modal .submitButton:hover {
+  background-color: #5a28a6;
 }
